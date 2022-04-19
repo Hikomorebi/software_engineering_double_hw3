@@ -81,7 +81,16 @@ public class NadTakerJFrame extends JFrame {
 				registerActionPerformed(evt);
 			}
 		});
+		
+		JMenuItem query = new JMenuItem();
+		query.setText("≤È—Ø");
+		query.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				queryActionPerformed(evt);
+			}
+		});
 		edit.add(register);
+		edit.add(query);
 
         jMenuBar.add(edit);
         
@@ -92,5 +101,11 @@ public class NadTakerJFrame extends JFrame {
 	}
 	 private void registerActionPerformed(ActionEvent evt) {
 	     new RegisterJFrame().setVisible(true);
+	 }
+	 
+	 private void queryActionPerformed(ActionEvent evt) {
+		 rows=nadTakerDaoImp.getAllTaker();
+	     simpleTableModel.setRows(rows);
+		 new QueryJFrame(jTable).setVisible(true);
 	 }
 }

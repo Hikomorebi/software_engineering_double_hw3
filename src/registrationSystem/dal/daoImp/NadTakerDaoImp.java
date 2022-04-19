@@ -47,13 +47,28 @@ public class NadTakerDaoImp implements NadTakerDao {
 				+ nadTaker.getStime() + "')";
 
 		try {
-			//System.out.println(insert);
+			// System.out.println(insert);
 			DBUtil.runUpdate(insert);
 			return true;
 		} catch (SQLException ex) {
 			Logger.getLogger(UserDaoImp.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		return false;
+	}
+
+	@Override
+	public String getAnswer(String number) {
+		String select = "select state from taker where snumber='" + number + "'";
+		try {
+			ResultSet rs = DBUtil.runQuery(select);
+			while (rs.next()) {
+				return rs.getString("state");
+			}
+
+		} catch (SQLException ex) {
+			Logger.getLogger(UserDaoImp.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		return "查无此人";
 	}
 
 }

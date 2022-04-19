@@ -8,4 +8,5 @@ import registrationSystem.dal.entity.NadTaker;
 public interface NadTakerDao {
 	public List<NadTaker> getAllTaker();
 	public boolean registerTaker(NadTaker nadTaker);
+	public String getAnswer(String number);
 }
