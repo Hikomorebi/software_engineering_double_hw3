@@ -32,27 +32,8 @@ public class LoginJFrame extends JFrame {
 	private JTextField userName;
 	private JPasswordField userPassword;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginJFrame frame = new LoginJFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public LoginJFrame() {
-		setTitle("µÇÂ½ºËËá¼ì²âµÇ¼ÇÏµÍ³");
+		setTitle("µÇÂ¼ºËËá¼ì²âµÇ¼ÇÏµÍ³");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		CardLayout cardLayout = new CardLayout();
@@ -63,7 +44,7 @@ public class LoginJFrame extends JFrame {
 		contentPane.setLayout(cardLayout);
 
 		JPanel userPanel = new JPanel();
-		contentPane.add(userPanel, "name_5600414879778");
+		contentPane.add(userPanel, "userpanel");
 		userPanel.setLayout(null);
 
 		userName = new JTextField();
@@ -75,7 +56,7 @@ public class LoginJFrame extends JFrame {
 		userPassword.setBounds(148, 96, 122, 21);
 		userPanel.add(userPassword);
 
-		JButton userButton1 = new JButton("µÇÂ½");
+		JButton userButton1 = new JButton("µÇÂ¼");
 		userButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				userLoginActionPerformed(event);
@@ -109,10 +90,12 @@ public class LoginJFrame extends JFrame {
 		UserDaoImp userDaoImp = new UserDaoImp();
 		if (userDaoImp.certifyUser(uname, upassword)) {
 			JOptionPane.showMessageDialog(this, "µÇÂ¼³É¹¦");
-			/*
-			 * JFrame studentJFrame = new JFrame();
-			 * JFrame.setBounds(600, 400, 800, 600); JFrame.setVisible(true);
-			 */
+
+			NadTakerJFrame nadTakerJFrame = new NadTakerJFrame();
+			nadTakerJFrame.setBounds(600, 400, 800, 600);
+			nadTakerJFrame.setLocation(100, 100);
+			nadTakerJFrame.setVisible(true);
+
 			this.setVisible(false);
 			this.dispose();
 		} else {

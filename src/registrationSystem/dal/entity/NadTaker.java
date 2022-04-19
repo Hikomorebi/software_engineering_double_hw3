@@ -7,7 +7,7 @@ public class NadTaker {
 	private int sage; 		// 检测者年龄
 	private String sphone; 	// 检测者电话号码
 	private String saddress; // 检测者地址
-	private int state; 		// 检测结果：0 阴性，1 阳性，2 暂未检测
+	private String state; 	// 检测结果
 	private String stime; 	// 检测时间
 
 	public NadTaker() {
@@ -21,11 +21,13 @@ public class NadTaker {
 		this.saddress = saddress;
 	}
 
-	public int getState() {
+
+
+	public String getState() {
 		return state;
 	}
 
-	public void setState(int state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 
