@@ -75,13 +75,13 @@ public class NadTakerJFrame extends JFrame {
 		edit.setText("选择");
 		edit.setToolTipText("");
 		JMenuItem register = new JMenuItem();
-		register.setText("登记");
+		register.setText("注册");
 		register.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				registerActionPerformed(evt);
 			}
 		});
-		
+
 		JMenuItem query = new JMenuItem();
 		query.setText("查询");
 		query.addActionListener(new ActionListener() {
@@ -89,23 +89,55 @@ public class NadTakerJFrame extends JFrame {
 				queryActionPerformed(evt);
 			}
 		});
+
+		JMenuItem update = new JMenuItem();
+		update.setText("刷新");
+		update.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				updateActionPerformed(evt);
+			}
+		});
+		
+		JMenuItem check = new JMenuItem();
+		check.setText("登记");
+		check.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				checkActionPerformed(evt);
+			}
+		});
 		edit.add(register);
 		edit.add(query);
+		edit.add(update);
+		edit.add(check);
 
-        jMenuBar.add(edit);
-        
-              
-        setJMenuBar(jMenuBar);
-        pack();
+		jMenuBar.add(edit);
+
+		setJMenuBar(jMenuBar);
+		pack();
 
 	}
-	 private void registerActionPerformed(ActionEvent evt) {
-	     new RegisterJFrame().setVisible(true);
-	 }
-	 
-	 private void queryActionPerformed(ActionEvent evt) {
-		 rows=nadTakerDaoImp.getAllTaker();
-	     simpleTableModel.setRows(rows);
-		 new QueryJFrame(jTable).setVisible(true);
-	 }
+
+	private void registerActionPerformed(ActionEvent evt) {
+		new RegisterJFrame().setVisible(true);
+	}
+
+	private void queryActionPerformed(ActionEvent evt) {
+		rows = nadTakerDaoImp.getAllTaker();
+		simpleTableModel.setRows(rows);
+		new QueryJFrame(jTable).setVisible(true);
+	}
+
+	private void updateActionPerformed(ActionEvent actionEvent) {
+		rows = nadTakerDaoImp.getAllTaker();
+		simpleTableModel.setRows(rows);
+		simpleTableModel.fireTableDataChanged();
+	}
+	
+	private void checkActionPerformed(ActionEvent actionEvent) {
+		 try {
+				new CheckJFrame().setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
+		}   
+	}
 }

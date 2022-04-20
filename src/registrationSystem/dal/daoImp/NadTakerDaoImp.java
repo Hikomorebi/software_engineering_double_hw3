@@ -71,4 +71,22 @@ public class NadTakerDaoImp implements NadTakerDao {
 		return "查无此人";
 	}
 
+	@Override
+	public boolean checkNadTaker(String number, String time, String res) {
+		String select = "select * from taker where snumber='" + number + "'";
+		try {
+			ResultSet rs = DBUtil.runQuery(select);
+			if (rs.next()) {
+				String update = "update taker set stime='" + time + "', state='" + res + "' where snumber='" + number
+						+ "'";
+				DBUtil.runUpdate(update);
+				return true;
+			}
+
+		} catch (SQLException ex) {
+			Logger.getLogger(UserDaoImp.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		return false;
+	}
+
 }

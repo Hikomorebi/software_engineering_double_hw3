@@ -37,67 +37,52 @@ public class RegisterJFrame extends JFrame {
 		contentPane.setLayout(null);
 
 		sname = new JTextField();
-		sname.setBounds(195, 30, 140, 20);
+		sname.setBounds(195, 50, 140, 20);
 		contentPane.add(sname);
 		sname.setColumns(10);
 
 		sage = new JTextField();
-		sage.setBounds(195, 70, 140, 20);
+		sage.setBounds(195, 100, 140, 20);
 		contentPane.add(sage);
 		sage.setColumns(10);
 
 		saddress = new JTextField();
-		saddress.setBounds(195, 110, 140, 20);
+		saddress.setBounds(195, 150, 140, 20);
 		contentPane.add(saddress);
 		saddress.setColumns(10);
 
 		snumber = new JTextField();
-		snumber.setBounds(195, 150, 140, 20);
+		snumber.setBounds(195, 200, 140, 20);
 		contentPane.add(snumber);
 		snumber.setColumns(10);
 
 		sphone = new JTextField();
-		sphone.setBounds(195, 190, 140, 20);
+		sphone.setBounds(195, 250, 140, 20);
 		contentPane.add(sphone);
 		sphone.setColumns(10);
 		
-		stime = new JTextField();
-		stime.setBounds(195, 230, 140, 20);
-		contentPane.add(stime);
-		stime.setColumns(10);
-		
-		state = new JTextField();
-		state.setBounds(195, 270, 140, 20);
-		contentPane.add(state);
-		state.setColumns(10);
+
 
 		JLabel labelName = new JLabel("姓名：");
-		labelName.setBounds(90, 30, 66, 15);
+		labelName.setBounds(90, 50, 66, 15);
 		contentPane.add(labelName);
 
 		JLabel labelAge = new JLabel("年龄：");
-		labelAge.setBounds(90, 70, 66, 15);
+		labelAge.setBounds(90, 100, 66, 15);
 		contentPane.add(labelAge);
 
 		JLabel labelAddress = new JLabel("地址：");
-		labelAddress.setBounds(90, 110, 66, 15);
+		labelAddress.setBounds(90, 150, 66, 15);
 		contentPane.add(labelAddress);
 
 		JLabel labelSnumber = new JLabel("身份证号：");
-		labelSnumber.setBounds(90, 150, 66, 15);
+		labelSnumber.setBounds(90, 200, 66, 15);
 		contentPane.add(labelSnumber);
 
 		JLabel labelPhone = new JLabel("联系电话：");
-		labelPhone.setBounds(90, 190, 66, 15);
+		labelPhone.setBounds(90, 250, 66, 15);
 		contentPane.add(labelPhone);
 
-		JLabel labelTime = new JLabel("检测时间：");
-		labelTime.setBounds(90, 230, 66, 15);
-		contentPane.add(labelTime);
-		
-		JLabel labelState = new JLabel("检测结果：");
-		labelState.setBounds(90, 270, 66, 15);
-		contentPane.add(labelState);
 		
 		JButton buttonAdd = new JButton("注册");
 		buttonAdd.addActionListener(new ActionListener() {
@@ -127,12 +112,11 @@ public class RegisterJFrame extends JFrame {
 			nadTaker.setSaddress(saddress.getText());
 			nadTaker.setSnumber(snumber.getText());
 			nadTaker.setSphone(sphone.getText());
-			nadTaker.setStime(stime.getText());
-			nadTaker.setState(state.getText());
+			nadTaker.setStime("");
+			nadTaker.setState("暂未检测");
 			nadTakerDaoImp.registerTaker(nadTaker);
 			JOptionPane.showMessageDialog(this, "注册成功！", "添加检测人员信息", JOptionPane.INFORMATION_MESSAGE);
 		} catch (Exception e) {
-			// TODO: handle exception
 			JOptionPane.showMessageDialog(this, "注册失败！", "添加检测人员信息", JOptionPane.ERROR_MESSAGE);
 		}
 	}
