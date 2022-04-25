@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.AbstractTableModel;
-//import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 import registrationSystem.dal.entity.NadTaker;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class SimpleTableModel<T> extends AbstractTableModel {
 	protected List<String> cols;
 	protected List<T> rows;

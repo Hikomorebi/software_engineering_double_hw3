@@ -9,7 +9,10 @@ import java.util.logging.Logger;
 import registrationSystem.dal.DBUtil;
 import registrationSystem.dal.entity.User;
 import registrationSystem.dal.dao.UserDao;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class UserDaoImp implements UserDao {
 
 	@Override
@@ -31,7 +34,7 @@ public class UserDaoImp implements UserDao {
 	}
 
 	@Override
-	public User getUserbyID(int id) {
+	public User getUserById(int id) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

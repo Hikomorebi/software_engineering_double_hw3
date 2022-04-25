@@ -1,14 +1,24 @@
 package registrationSystem.dal.entity;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class NadTaker {
 	private int sid;
-	private String sname; 	// 检测者名称
-	private String snumber; // 检测者身份证号码
-	private int sage; 		// 检测者年龄
-	private String sphone; 	// 检测者电话号码
-	private String saddress; // 检测者地址
-	private String state; 	// 检测结果
-	private String stime; 	// 检测时间
+	/**检测者名称*/
+	private String sname;
+	/**检测者身份证号码*/
+	private String snumber;
+	/**检测者年龄*/
+	private int sage;
+	/**检测者电话号码*/
+	private String sphone;
+	/**检测者地址*/
+	private String saddress;
+	/**检测结果*/
+	private String state;
+	/**检测时间*/
+	private String stime;
 
 	public NadTaker() {
 	}

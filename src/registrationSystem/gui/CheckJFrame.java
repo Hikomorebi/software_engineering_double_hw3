@@ -15,12 +15,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-//import com.sun.org.apache.xml.internal.security.Init;
-
 import registrationSystem.dal.entity.NadTaker;
 import registrationSystem.dal.daoImp.NadTakerDaoImp;
 
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 
 public class CheckJFrame extends JFrame{
 	private JPanel contentPane;
@@ -92,6 +93,7 @@ public class CheckJFrame extends JFrame{
 		
 		JButton buttonUpdate = new JButton("登记");
 		buttonUpdate.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				checkInActionPerformed(e);
 			}
@@ -101,6 +103,7 @@ public class CheckJFrame extends JFrame{
 		
 		JButton buttonCancel = new JButton("取消");
 		buttonCancel.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelActionPerformed(e);
 			}

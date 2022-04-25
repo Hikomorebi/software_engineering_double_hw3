@@ -15,7 +15,10 @@ import java.awt.event.ActionEvent;
 
 import registrationSystem.dal.entity.NadTaker;
 import registrationSystem.dal.daoImp.NadTakerDaoImp;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class RegisterJFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField sname;
@@ -86,6 +89,7 @@ public class RegisterJFrame extends JFrame {
 		
 		JButton buttonAdd = new JButton("注册");
 		buttonAdd.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				registerTakerActionPerformed(e);
 			}
@@ -95,6 +99,7 @@ public class RegisterJFrame extends JFrame {
 
 		JButton buttonCancel = new JButton("取消");
 		buttonCancel.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelActionPerformed(e);
 			}

@@ -23,7 +23,10 @@ import javax.swing.table.DefaultTableModel;
 
 import registrationSystem.dal.entity.NadTaker;
 import registrationSystem.dal.daoImp.NadTakerDaoImp;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class NadTakerJFrame extends JFrame {
 	private JPanel contentPane;
 	private List<String> cols;
@@ -77,6 +80,7 @@ public class NadTakerJFrame extends JFrame {
 		JMenuItem register = new JMenuItem();
 		register.setText("注册");
 		register.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent evt) {
 				registerActionPerformed(evt);
 			}
@@ -85,6 +89,7 @@ public class NadTakerJFrame extends JFrame {
 		JMenuItem query = new JMenuItem();
 		query.setText("查询");
 		query.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent evt) {
 				queryActionPerformed(evt);
 			}
@@ -93,6 +98,7 @@ public class NadTakerJFrame extends JFrame {
 		JMenuItem update = new JMenuItem();
 		update.setText("刷新");
 		update.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent evt) {
 				updateActionPerformed(evt);
 			}
@@ -101,6 +107,7 @@ public class NadTakerJFrame extends JFrame {
 		JMenuItem check = new JMenuItem();
 		check.setText("登记");
 		check.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent evt) {
 				checkActionPerformed(evt);
 			}

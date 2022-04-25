@@ -19,7 +19,10 @@ import java.awt.event.ActionEvent;
 
 import registrationSystem.dal.entity.NadTaker;
 import registrationSystem.dal.daoImp.NadTakerDaoImp;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class QueryJFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField idJTextField;
@@ -46,8 +49,9 @@ public class QueryJFrame extends JFrame {
 
 		JButton buttonSearch = new JButton("查询");
 		buttonSearch.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				SearchActionPerformed(e);
+				searchActionPerformed(e);
 			}
 		});
 		buttonSearch.setBounds(169, 96, 93, 23);
@@ -77,15 +81,16 @@ public class QueryJFrame extends JFrame {
 
 		JButton buttonSearch = new JButton("查询");
 		buttonSearch.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				SearchActionPerformed(e);
+				searchActionPerformed(e);
 			}
 		});
 		buttonSearch.setBounds(169, 96, 93, 23);
 		contentPane.add(buttonSearch);
 	}
 
-	private void SearchActionPerformed(ActionEvent event) {
+	private void searchActionPerformed(ActionEvent event) {
 		try {
 			jTable.clearSelection();
 			String queryNumber = this.idJTextField.getText();

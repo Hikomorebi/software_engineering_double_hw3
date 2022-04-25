@@ -11,7 +11,10 @@ import java.util.ArrayList;
 import registrationSystem.dal.DBUtil;
 import registrationSystem.dal.entity.NadTaker;
 import registrationSystem.dal.dao.NadTakerDao;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class NadTakerDaoImp implements NadTakerDao {
 	@Override
 	public List<NadTaker> getAllTaker() {

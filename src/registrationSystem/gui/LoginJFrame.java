@@ -11,7 +11,6 @@ import registrationSystem.dal.entity.User;
 import registrationSystem.dal.daoImp.UserDaoImp;
 
 import java.awt.CardLayout;
-import java.awt.Event;
 
 import javax.swing.JTextField;
 import java.awt.FlowLayout;
@@ -25,7 +24,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class LoginJFrame extends JFrame {
 
 	private JPanel contentPane;
@@ -58,6 +60,7 @@ public class LoginJFrame extends JFrame {
 
 		JButton userButton1 = new JButton("登录");
 		userButton1.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent event) {
 				userLoginActionPerformed(event);
 			}
@@ -67,6 +70,7 @@ public class LoginJFrame extends JFrame {
 
 		JButton userButton2 = new JButton("注册");
 		userButton2.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent event) {
 				userRegisterActionPerformed(event);
 			}
@@ -90,7 +94,6 @@ public class LoginJFrame extends JFrame {
 		UserDaoImp userDaoImp = new UserDaoImp();
 		if (userDaoImp.certifyUser(uname, upassword)) {
 			JOptionPane.showMessageDialog(this, "登录成功");
-
 			NadTakerJFrame nadTakerJFrame = new NadTakerJFrame();
 			nadTakerJFrame.setBounds(600, 400, 800, 600);
 			nadTakerJFrame.setLocation(100, 100);

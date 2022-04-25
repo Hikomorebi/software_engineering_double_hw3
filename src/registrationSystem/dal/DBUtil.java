@@ -8,19 +8,31 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class DBUtil {
 
-	private static String driver = "com.mysql.jdbc.Driver";// 驱动程序名
-	private static String URL = "jdbc:mysql://localhost:3306/nadrs?useSSL=false&allowPublicKeyRetrieval=true";// URL指向访问的数据库
+	/**
+	 * 驱动程序名
+	 */
+	private static String driver = "com.mysql.jdbc.Driver";
+	
+	/**
+	 * URL指向访问的数据库
+	 */
+	private static String URL = "jdbc:mysql://localhost:3306/nadrs?useSSL=false&allowPublicKeyRetrieval=true";
 	private static Connection con = null;
 	private static Statement smt = null;
 	private static ResultSet rs = null;
 
 	private static Connection createConnection() {
 		try {
-			Class.forName(driver);// 加载驱动程序
-			return DriverManager.getConnection(URL, "root", "123456");// 以root权限连接数据库
+			/*加载驱动程序*/
+			Class.forName(driver);
+			/*以root权限连接数据库*/
+			return DriverManager.getConnection(URL, "root", "123456");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();

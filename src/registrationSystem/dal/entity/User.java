@@ -1,5 +1,8 @@
 package registrationSystem.dal.entity;
-
+/**
+ * @author Kunbin He,Haoze Zhu
+ * @version 创建时间：2021年4月20日
+ */
 public class User {
 	private int uid;
 	private String uname;
@@ -9,8 +12,10 @@ public class User {
 	}
 
 	public User(String uname, String upassword) {
-		this.uname = uname;// 管理员名称
-		this.upassword = upassword;// 密码
+		// 管理员名称
+		this.uname = uname;
+		// 密码
+		this.upassword = upassword;
 	}
 
 	public int getUid() {
